@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Madam Ji ♡</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+ margin:0;background:#100b16;color:#fff4ec;
+ font-family:'DM Sans',sans-serif;overflow-x:hidden
+}
+body:before{
+ content:"";position:fixed;inset:0;pointer-events:none;
+ background:radial-gradient(ellipse at 15% 15%,#63304b55,transparent 45%),
+ radial-gradient(ellipse at 90% 80%,#9c663522,transparent 40%);
+ z-index:-1
+}
+button,input{font:inherit}
+button{cursor:pointer}
+.hidden{display:none!important}
+.page{max-width:950px;margin:auto;padding:24px}
+.gold{color:#edc783}
+.pink{color:#f49bcf}
+.small{
+ font-size:10px;letter-spacing:3px;color:#c7aecb;
+ text-transform:uppercase
+}
+
+/* SECRET LOCK */
+#lock{
+ min-height:100vh;display:flex;flex-direction:column;
+ align-items:center;justify-content:center;text-align:center;
+ padding:25px
+}
+.seal{
+ width:90px;height:90px;border:1px solid #edc78388;
+ border-radius:50%;display:grid;place-items:center;
+ font-size:45px;color:#edc783;margin:25px;
+ box-shadow:0 0 45px #edc78316
+}
+h1,h2,h3{
+ font-family:'Cormorant Garamond',serif;font-weight:400
+}
+#lock h1{font-size:clamp(55px,10vw,85px);margin:0}
+#lock h1 em{color:#edc783}
+.subtitle{color:#bbaabe;line-height:1.9;font-size:14px}
+.lockbox{
+ width:min(100%,390px);margin-top:20px;padding:25px;
+ background:#211728cc;border:1px solid #f49bcf44;
+ border-radius:18px;box-shadow:0 20px 70px #0005
+}
+.lockbox label{display:block;text-align:left;margin-bottom:12px}
+.lockbox input{
+ width:100%;padding:15px;border:1px solid #ffffff25;
+ background:#100b16;color:white;border-radius:9px;outline:none
+}
+.btn{
+ border:0;border-radius:9px;padding:15px 20px;
+ background:linear-gradient(100deg,#edc783,#f49bcf);
+ color:#261526;font-weight:600;letter-spacing:1px
+}
+.lockbox .btn{width:100%;margin-top:14px}
+#error{color:#ff9ab7;font-size:12px;min-height:16px}
+
+/* WEBSITE */
+header{
+ padding:25px 0;border-bottom:1px solid #ffffff16;
+ display:flex;justify-content:space-between;align-items:center
+}
+.brand{font-family:'Cormorant Garamond',serif;font-size:25px}
+.hero{
+ min-height:500px;display:flex;flex-direction:column;
+ justify-content:center;align-items:flex-start;position:relative;
+ border-bottom:1px solid #ffffff16;padding:60px 0
+}
+.hero h1{
+ font-size:clamp(75px,13vw,125px);line-height:.82;margin:20px 0
+}
+.hero h1 em{color:#edc783}
+.hero p{max-width:440px;color:#bbaabe;line-height:1.9}
+.hero .btn{margin-top:20px}
+.hero-heart{
+ position:absolute;right:8%;top:25%;font-size:150px;
+ color:#edc78344;font-family:Georgia,serif
+}
+section.content{padding:85px 0;border-bottom:1px solid #ffffff16}
+.number{font-size:10px;letter-spacing:3px;color:#edc783}
+section h2{font-size:clamp(45px,7vw,70px);line-height:.95;margin:18px 0 30px}
+section h2 em{color:#edc783}
+.letter,.promise{
+ padding:clamp(23px,5vw,48px);
+ background:linear-gradient(140deg,#291c30,#17101e);
+ border:1px solid #f49bcf44;border-radius:16px
+}
+.letter p{
+ font-family:'Cormorant Garamond',serif;
+ font-size:22px;line-height:1.65;color:#e3d4e4
+}
+.letter strong{color:#edc783}
+.signature{font-size:29px!important;font-style:italic;color:#edc783!important}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.card{
+ padding:25px;border:1px solid #ffffff1c;border-radius:13px;
+ background:#ffffff06;transition:.25s
+}
+.card:hover{transform:translateY(-5px);border-color:#edc78388}
+.card .icon{font-size:30px;color:#edc783}
+.card h3{font-size:28px;margin:16px 0 8px}
+.card p{font-size:13px;color:#bbaabe;line-height:1.8}
+.promise p{color:#c9b9ce;line-height:1.9}
+.promise li{
+ list-style:none;padding:15px 0;border-bottom:1px solid #ffffff16;
+ color:#e8d9e8;line-height:1.7
+}
+.promise ul{padding:0}
+.promise li span{color:#edc783;margin-right:12px}
+.final{text-align:center;padding:100px 0!important}
+.final .bigheart{font-size:55px;color:#f49bcf}
+.final h2{font-size:clamp(60px,10vw,95px)}
+.final h2 em{color:#edc783}
+.final-message{
+ font-family:'Cormorant Garamond',serif;
+ font-size:clamp(25px,5vw,36px);line-height:1.4;
+ color:#e8d7eb;margin:35px 0
+}
+.final-message strong{color:#edc783;font-weight:500}
+footer{
+ padding:25px 0;display:flex;justify-content:space-between;
+ gap:15px;color:#9c8aa3;font-size:10px;letter-spacing:1px
+}
+footer button{background:none;border:0;color:#edc783}
+#hearts{min-height:35px;color:#f49bcf;font-size:25px;letter-spacing:8px}
+@media(max-width:650px){
+ .page{padding:19px}
+ .hero-heart{font-size:90px;right:2%;top:15%;opacity:.7}
+ .grid{grid-template-columns:1fr}
+ section.content{padding:65px 0}
+ .hero{min-height:440px}
+ .letter p{font-size:20px}
+ footer{flex-direction:column;align-items:center;text-align:center}
+}
+</style>
+</head>
+
+<body>
+
+<!-- SECRET PASSWORD SCREEN -->
+<div id="lock">
+ <div class="small">A private little corner</div>
+ <div class="seal">♡</div>
+ <h1>For <em>Madam Ji</em></h1>
+ <p class="subtitle">
+  Kuch baatein lafzon se nahi,<br>
+  dil se samajhi jaati hain. ♡
+ </p>
+
+ <form class="lockbox" id="unlockForm">
+  <label class="small" for="pass">THE LITTLE SECRET</label>
+  <input id="pass" type="password"
+   placeholder="Enter the secret phrase" required>
+  <button class="btn" type="submit">UNLOCK MY HEART ↗</button>
+  <p id="error"></p>
+ </form>
+ <p class="small">Made with care, honesty & love ♡</p>
+</div>
+
+<!-- MAIN WEBSITE -->
+<div id="site" class="page hidden">
+
+ <header>
+  <div class="brand">for madam ji <span class="pink">♡</span></div>
+  <div class="small">Just between us</div>
+ </header>
+
+ <div class="hero">
+  <div class="small">No perfect words, just a true heart</div>
+  <h1>I'm sorry,<br><em>Madam Ji.</em></h1>
+  <p>
+   Yeh sirf sorry nahi hai. Yeh ek chhoti si koshish hai
+   aapko batane ki aap mere liye kitni khaas ho.
+  </p>
+  <button class="btn" onclick="document.getElementById('letter').scrollIntoView()">
+   READ MY HEART ↓
+  </button>
+  <div class="hero-heart">♡</div>
+ </div>
+
+ <section class="content" id="letter">
+  <div class="number">01 / A LETTER FROM MY HEART</div>
+  <h2>Kuch baatein<br><em>dil se.</em></h2>
+
+  <div class="letter">
+   <p>Madam Ji, ❤️</p>
+
+   <p>
+    Agar meri kisi baat, kisi galti ya mere behaviour se
+    aapko takleef hui hai, toh main dil se
+    <strong>sorry kehta hoon.</strong>
+    Mera iraada kabhi aapko hurt karne ka nahi tha.
+   </p>
+
+   <p>
+    Ho sakta hai main har baar apni feelings sahi tarah
+    se express na kar paun. Ho sakta hai kabhi meri baat
+    galat lag jaaye. Lekin aapki ahmiyat mere liye kabhi
+    kam nahi hui.
+   </p>
+
+   <p>
+    Aap mere liye sirf ek dost nahi ho. Aap woh insaan ho
+    jinki baatein, jinki smile aur jinka saath mere liye
+    bahut maayne rakhta hai. Main nahi chahta ki meri
+    kisi galti ki wajah se hamari dosti mein doori aaye.
+   </p>
+
+   <p>
+    Main yeh nahi chahta ki aap sirf meri baaton par
+    bharosa karo. Main chahta hoon ki waqt ke saath
+    mere actions aapko dikhayein ki main apni galti
+    samajhta hoon aur behtar banna chahta hoon.
+   </p>
+
+   <p>
+    Aapko waqt chahiye toh main uski bhi respect karunga.
+    Bas meri maafi ko ek sachchi koshish samajhna.
+   </p>
+
+   <p>Hamesha aapki khushi ki dua ke saath,</p>
+   <p class="signature">Aapka dost ♡</p>
+  </div>
+ </section>
+
+ <section class="content">
+  <div class="number">02 / WHY YOU ARE SPECIAL</div>
+  <h2>Aapki baat hi<br><em>alag hai.</em></h2>
+
+  <div class="grid">
+   <div class="card">
+    <div class="icon">✧</div>
+    <h3>Aapki smile</h3>
+    <p>
+     Aapki muskurahat mein ek alag si baat hai.
+     Dil chahta hai aap hamesha khush raho.
+    </p>
+   </div>
+
+   <div class="card">
+    <div class="icon">♡</div>
+    <h3>Aapka dil</h3>
+    <p>
+     Aapka apna andaaz, aapki baatein aur aapki
+     personality aapko sabse alag banati hain.
+    </p>
+   </div>
+
+   <div class="card">
+    <div class="icon">☾</div>
+    <h3>Aapki ahmiyat</h3>
+    <p>
+     Zindagi mein kuch log khaas ban jaate hain.
+     Aap mere liye unhi logon mein se ho.
+    </p>
+   </div>
+  </div>
+ </section>
+
+ <section class="content">
+  <div class="number">03 / A PROMISE FOR OUR FRIENDSHIP</div>
+  <h2>Umar bhar saath,<br><em>dil se.</em></h2>
+
+  <div class="promise">
+   <p>
+    Main chahta hoon hamari dosti sirf achhe waqt tak
+    simat kar na rahe. Ismein respect ho, sachchai ho,
+    understanding ho aur ek doosre ki feelings ki kadar ho.
+   </p>
+
+   <p>
+    Umar bhar saath nibhaane ka matlab yeh nahi ki
+    kabhi galti nahi hogi. Matlab yeh hai ki hum galti
+    se seekhein, ek doosre ki baat sunein aur dosti
+    ko izzat ke saath sambhaal kar rakhein.
+   </p>
+
+   <ul>
+    <li><span>01 ♡</span> Aapki respect hamesha karunga.</li>
+    <li><span>02 ♡</span> Galti hogi toh use accept karna seekhunga.</li>
+    <li><span>03 ♡</span> Aapki feelings aur boundaries ki kadar karunga.</li>
+    <li><span>04 ♡</span> Dosti ko sirf words se nahi, actions se nibhaunga.</li>
+    <li><span>05 ♡</span> Dua hai hamari dosti hamesha khushiyon se bhari rahe.</li>
+   </ul>
+  </div>
+ </section>
+
+ <section class="content final">
+  <div class="bigheart">♡</div>
+  <div class="number">ONE LAST THING, MADAM JI</div>
+
+  <h2>You're not just<br><em>my friend.</em></h2>
+
+  <div class="final-message">
+   Tum meri friend hi nahi ho…<br>
+   Mera <strong>dost</strong> ho,<br>
+   Meri <strong>jaan</strong> ho,<br>
+   Aur meri <strong>kull kayenat</strong> ho. ❤️
+  </div>
+
+  <p class="subtitle">
+   Sorry, Madam Ji. Aap mere liye bahut special ho. ♡
+  </p>
+
+  <button class="btn" onclick="sendHeart()">SEND A LITTLE HEART ♡</button>
+  <div id="hearts"></div>
+ </section>
+
+ <footer>
+  <span>FOR MADAM JI, WITH A SINCERE HEART ♡</span>
+  <button onclick="location.reload()">START AGAIN ↺</button>
+ </footer>
+</div>
+
+<script>
+const PASSWORD = "sweet heart ❤️";
+
+document.getElementById("unlockForm").addEventListener("submit", function(e){
+ e.preventDefault();
+
+ const entered = document.getElementById("pass").value.trim();
+ const error = document.getElementById("error");
+
+ if(entered.toLowerCase() === PASSWORD.toLowerCase()){
+  document.getElementById("lock").classList.add("hidden");
+  document.getElementById("site").classList.remove("hidden");
+  window.scrollTo(0,0);
+ }else{
+  error.textContent = "Secret phrase sahi nahi hai, phir se try karo ♡";
+  document.getElementById("pass").value = "";
+ }
+});
+
+function sendHeart(){
+ const area = document.getElementById("hearts");
+ area.textContent = "♡ ♥ ♡ ✦ ♥ ♡";
+ area.animate(
+  [{opacity:0,transform:"translateY(8px)"},
+   {opacity:1,transform:"translateY(0)"}],
+  {duration:600}
+ );
+}
+</script>
+</body>
+</html>
